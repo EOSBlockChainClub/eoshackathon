@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './pages/index';
+import Encrypt from './pages/encrypt';
+import Decrypt from './pages/decrypt';
+import Stats from './pages/stats';
+import Application from './pages/app';
+import style from './style.css';
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+ReactDOM.render(<Application />, document.getElementById('root'));

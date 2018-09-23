@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Eos from 'eosjs'; // https://github.com/EOSIO/eosjs
 
-// material-ui dependencies
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -23,27 +21,6 @@ const accounts = [
   {"name":"useraaaaaaaf", "privateKey":"5KaqYiQzKsXXXxVvrG8Q3ECZdQAj2hNcvCgGEubRvvq7CU3LySK", "publicKey":"EOS5btzHW33f9zbhkwjJTYsoyRzXUNstx1Da9X2nTzk8BQztxoP3H"},
   {"name":"useraaaaaaag", "privateKey":"5KFyaxQW8L6uXFB6wSgC44EsAbzC7ideyhhQ68tiYfdKQp69xKo", "publicKey":"EOS8Du668rSVDE3KkmhwKkmAyxdBd73B51FKE7SjkKe5YERBULMrw"}
 ];
-
-// set up styling classes using material-ui "withStyles"
-const styles = theme => ({
-  card: {
-    margin: 20,
-  },
-  paper: {
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-  },
-  formButton: {
-    marginTop: theme.spacing.unit,
-    width: "100%",
-  },
-  pre: {
-    background: "#ccc",
-    padding: 10,
-    marginBottom: 0.
-  },
-});
 
 // Index component
 class Index extends Component {
@@ -197,4 +174,4 @@ class Index extends Component {
 
 }
 
-export default withStyles(styles)(Index);
+export default Index;

@@ -105,33 +105,60 @@ class Decrypt extends Component {
         return (
             <div>
                 {!this.state.confirmation &&
-                    <div className="event-info">
-                        <div className="event-pic"></div>
-                        <div className="event-other">
-                            <h1>EOS Hackathon London</h1>
-                            <div className="info-container">
-                                <i className="fas fa-map-marker"></i>
-                                <span className="info-text">Wembley stadium</span>
+                    <div>
+                        <div className="event-info">
+                            <div className="event-pic"></div>
+                            <div className="event-other">
+                                <h1>EOS Hackathon London</h1>
+                                <div className="info-container">
+                                    <i className="fas fa-map-marker"></i>
+                                    <span className="info-text">Wembley stadium</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-calendar"></i>
+                                    <span className="info-text">September 23rd, 2018</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-clock"></i>
+                                    <span className="info-text">10:00</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-info"></i>
+                                    <span className="info-text">This is an AngelHack event</span>
+                                </div>
                             </div>
-                            <div className="info-container">
-                                <i className="fas fa-calendar"></i>
-                                <span className="info-text">September 28th, 2018</span>
-                            </div>
-                            <div className="info-container">
-                                <i className="fas fa-clock"></i>
-                                <span className="info-text">18:00</span>
-                            </div>
-                            <div className="info-container">
-                                <i className="fas fa-info"></i>
-                                <span className="info-text">This is a friendly match</span>
+                            <div className="button-container">
+                                <button className="btn btn-primary"
+                                        onClick={this.showConfirmation}
+                                >
+                                  Allow data usage
+                                </button>
                             </div>
                         </div>
-                        <div className="button-container">
-                            <button className="btn btn-primary"
-                                    onClick={this.showConfirmation}
-                            >
-                              Allow data usage
-                            </button>
+                        <div className="event-info" style={{opacity: '0.33'}}>
+                            <div className="event-pic"></div>
+                            <div className="event-other">
+                                <h1>EOS Hackathon Sydney</h1>
+                                <div className="info-container">
+                                    <i className="fas fa-map-marker"></i>
+                                    <span className="info-text">Sydney stadium</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-calendar"></i>
+                                    <span className="info-text">August 15th, 2018</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-clock"></i>
+                                    <span className="info-text">9:00</span>
+                                </div>
+                                <div className="info-container">
+                                    <i className="fas fa-info"></i>
+                                    <span className="info-text">This is an AngelHack event</span>
+                                </div>
+                            </div>
+                            <div className="button-container">
+                                <span>This event has closed data submission</span>
+                            </div>
                         </div>
                     </div>
                 }

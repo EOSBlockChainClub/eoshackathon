@@ -80,7 +80,7 @@ i {
 
 button {
     height: 32px;
-    margin-top: 25px; padding-left: 20px; padding-right: 20px;
+    margin-top: 10px; padding-left: 20px; padding-right: 20px;
     background-color: #2A7E62; border-radius: 30px; border: 0;
     color: #fff;
 }
@@ -186,4 +186,15 @@ span.stat {
 input:focus,
 button:focus {
     outline: 0;
+}
+
+.event-info {
+    margin-bottom: 20px; margin-top: 20px;
+}
+
+.change-section {
+    display: block;
+    text-align: right;
+    color: #fff; font-size: 10px; font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
 }

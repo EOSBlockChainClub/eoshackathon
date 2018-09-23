@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import CryptoJS from 'crypto-js';
 import Eos from 'eosjs';
 
+// never do this except if you are writing hackathon spagetti code
+const eosAccount = {
+    name: 'testacc',
+    key: '5JQdpdZmgaXuu9pWrUXAyZ77KjNvjNR8XrFzk51op38FzRtKqVV'
+}
+
 class Decrypt extends Component {
     constructor(props) {
         super(props);
@@ -10,9 +16,7 @@ class Decrypt extends Component {
             id: '',
             password: '',
             confirmation: false,
-            encryptedIdentity: {},
-            eosKey: '',
-            eosName: ''
+            encryptedIdentity: {}
         }
 
         this.onChange = this.onChange.bind(this);
@@ -67,24 +71,34 @@ class Decrypt extends Component {
 
         localStorage.setItem('identities', JSON.stringify([identity]));
 
-        const eos = Eos({keyProvider: this.state.eosKey});
+        const eos = Eos({keyProvider: eosAccount.key});
         const result = await eos.transaction({
           actions: [{
             account: 'txcid',
             name: 'subscribe',
             authorization: [{
-              actor: this.state.eosName,
+              actor: eosAccount.name,
               permission: 'active',
             }],
             data: {
-                owner: this.state.eosName,
+                owner: eosAccount.name,
                 eventid: eid,
                 id: anonymousId
             }
           }],
         });
 
-        console.log(result);
+        // revert state
+        this.setState = ({
+            id: '',
+            password: '',
+            confirmation: false,
+            encryptedIdentity: {},
+            eosKey: '',
+            eosName: ''
+        });
+
+        window.alert('Data decrypted! Check your e-mail for the voucher!')
     }
 
     render() {
@@ -124,26 +138,14 @@ class Decrypt extends Component {
 
                 {this.state.confirmation &&
                     <form className="identity-form">
-                        <h1>Enter your credentials</h1>
-                        <div className="input-group control-input">
-                            <label>EOS account name</label>
-                            <input type="text" defaultValue={this.state.eosName} required={true} onChange={this.onChange} name="eosName" />
-                        </div>
-                        <div className="input-group control-input">
-                            <label>EOS private key</label>
-                            <input type="password" defaultValue={this.state.eosKey} required={true} onChange={this.onChange} name="eosKey" />
-                        </div>
+                        <h1>Enter your password</h1>
                         <div className="input-group control-input">
                             <label>Secret password</label>
                             <input type="password" defaultValue={this.state.password} required={true} onChange={this.onChange} name="password" />
                         </div>
                         <div className="button-container">
                             <button className="btn btn-primary"
-                                    disabled={
-                                        this.state.password.length === 0 ||
-                                        this.state.eosKey.length === 0 ||
-                                        this.state.eosName.length === 0
-                                    }
+                                    disabled={this.state.password.length === 0}
                                     onClick={this.onSave}
                             >
                               Save

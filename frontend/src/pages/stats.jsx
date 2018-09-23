@@ -45,7 +45,6 @@ class Stats extends Component {
 
                         if (found) {
                             attendees.push(found);
-                            console.log('att', attendees);
                             this.setState({
                                 attendees
                             });

@@ -100,20 +100,28 @@ class Stats extends Component {
         const gProportions = this.getGenderProportions();
         return (
             <div>
-                <h1>EOS Hackathon London statistics</h1>
-                <div className="statistics">
-                    <h3>Average age</h3>
-                    <span className="stat">{this.getAverageAge()} years old</span>
-                    <h3>Gender distribution</h3>
-                    <div id="chart">
-                        {Object.keys(gProportions).map(key =>
-                            <div className="bar" key={key} style={{width: this.getBarWidth(gProportions, key)}}>
-                                <span>{key}</span>
-                            </div>
-                        )}
+                <div className="event-stat">
+                    <h1>EOS Hackathon London statistics</h1>
+                    <div className="statistics">
+                        <h3>Average age</h3>
+                        <span className="stat">{this.getAverageAge()} years old</span>
+                        <h3>Gender distribution</h3>
+                        <div id="chart">
+                            {Object.keys(gProportions).map(key =>
+                                <div className="bar" key={key} style={{width: this.getBarWidth(gProportions, key)}}>
+                                    <span>{key}</span>
+                                </div>
+                            )}
+                        </div>
+                        <h3>Top location</h3>
+                        <span className="stat">{this.getTopLocation()}</span>
                     </div>
-                    <h3>Top location</h3>
-                    <span className="stat">{this.getTopLocation()}</span>
+                </div>
+                <div className="event-stat">
+                    <h1 style={{opacity: '.33'}}>EOS Hackathon Sydney statistics</h1>
+                    <div style={{opacity: '.33'}} className="statistics">
+                        <span>No data available</span>
+                    </div>
                 </div>
             </div>
         );

@@ -69,7 +69,7 @@ class Encrypt extends Component {
 
     render() {
         return (
-            <div>
+            <div className="encrypt">
                 <h1>Encrypt your data</h1>
                 <form className="identity-form">
                     <div className="input-group control-input">

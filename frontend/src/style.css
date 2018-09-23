@@ -50,7 +50,7 @@ body {
 
 #root {
     max-width: 720px;
-    margin-left: auto; margin-right: auto; margin-top: 120px;
+    margin-left: auto; margin-right: auto; margin-top: 80px;
 }
 
 .container {
@@ -197,4 +197,12 @@ button:focus {
     text-align: right;
     color: #fff; font-size: 10px; font-family: 'Montserrat', sans-serif;
     cursor: pointer;
+}
+
+.event-stat{
+    margin-top: 20px; margin-bottom: 40px;
+}
+
+.encrypt {
+    margin-top: 20px;
 }

@@ -64,6 +64,7 @@ class Encrypt extends Component {
         });
 
         localStorage.setItem('uid', uid);
+
         window.alert(`Identity saved! Your password: ${this.state.password}. DO NOT LOSE YOUR PASSWORD!`);
     }
 
